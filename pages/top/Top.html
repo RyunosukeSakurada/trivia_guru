@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trivia Guru</title>
+  <!-- css -->
+  <link rel="stylesheet" href="../../style/common.css">
+  <link rel="stylesheet" href="Top.css">
+  <!-- box icon -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <!-- font family -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sigmar&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="curtain" id="curtain">
+      <img src="../../img/img_curtain.jpg" class="curtain-img" id="left-curtain" alt="">
+      <img src="../../img/img_curtain.jpg" class="curtain-img" id="right-curtain" alt="">
+    </div>
+
+    <!-- ALERTS -->
+    <div class="modalView" id="modalView">
+      <div id="modalView__closeBtn"><i class='bx bx-x'></i></div>
+      <div class="modalView__content centered">
+        <p>Select options!</p>
+      </div>
+    </div>
+
+    <form class="main" id="myForm" action="index.html">
+      <h1 class="logo">Trivia Guru</h1>
+      <!-- genru -->
+      <select id="genre-select" name="genre-select">
+        <option value="0">Choose Category</option>
+        <option value="10" id="10">Books</option>
+        <option value="11" id="11">Film</option>
+        <option value="12" id="12">Music</option>
+        <option value="14" id="14">Television</option>
+        <option value="15" id="15">Video Games</option>
+      </select>
+      <!-- amount -->
+      <select id="question-select" name="question-select">
+        <option value="0">Number Of Questions</option>
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+      </select>
+      
+      <a href="#" class="start_btn">START</a>
+    </form>
+
+  <!-- GSAP -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
+    integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="../../js/Top.js"></script>
+</body>
+</html>
