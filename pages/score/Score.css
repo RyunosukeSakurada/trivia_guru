@@ -1,0 +1,100 @@
+header{
+  background-color:#222;
+  padding:1rem 9%;
+}
+a{
+  text-decoration:none;
+  color:#FF8400;
+  font-size:2rem;
+  font-family: 'Sigmar', cursive;
+  cursor:pointer;
+}
+a:hover{
+  color:#d16c00;
+}
+
+
+
+/* SCORE */
+.score-container{
+  background-color:#222;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  width:50%;
+  padding:2rem 4rem;
+  border-radius:10px;
+  text-align:center;
+}
+.score-circle-box {
+  width: 400px;
+  height: 400px;
+  position:relative;
+  margin:0 auto;
+}
+.score-circle-box::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  background: #ccc;
+  border-radius: 50%;
+  z-index:-1;
+}
+.score-content{
+  position:absolute;
+  color:#222;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.score-content p{
+  font-size:1rem;
+  font-weight:bold;
+}
+.score{
+  font-size:1.5rem;
+}
+#myChart{
+  position:relative;
+}
+.congrats {
+  font-size: 1.5rem;
+  margin:2rem 0;
+}
+
+
+.bottom-container{
+  border-top:1px solid #999;
+}
+
+
+@media(max-width:1000px){
+  .score-container{
+    background-color:#222;
+    padding: 2rem 4rem;
+    top:0%;
+    left:0%;
+    transform: translate(0%, 0%);
+    position:relative;
+    width:100%;
+    border-radius:0px;
+    margin-top:5rem;
+  }
+}
+@media(max-width:500px){
+  .score-circle-box {
+    width: 300px;
+    height: 300px;
+  }
+}
+@media(max-width:400px){
+  .score-circle-box {
+    width: 200px;
+    height: 200px;
+  }
+}

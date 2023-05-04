@@ -1,0 +1,139 @@
+header{
+  background-color:#222;
+  padding:1rem 9%;
+}
+a{
+  text-decoration:none;
+  color:#FF8400;
+  font-size:2rem;
+  font-family: 'Sigmar', cursive;
+  cursor:pointer;
+}
+a:hover{
+  color:#d16c00;
+}
+.trivia-container{
+  background-color:#222;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  width:50%;
+  padding:2rem 4rem;
+  border-radius:10px;
+}
+
+/* top */
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:1.5rem;
+  border-bottom:1px solid #999;
+}
+.category-title{
+  font-size:2rem;
+}
+.remaining-question{
+  font-size:1.2rem;
+}
+
+/* quiz */
+.quiz{
+  border-bottom:1px solid #999;
+}
+.question{
+  font-size:1.5rem;
+  margin-bottom:1rem;
+}
+.ans{
+  margin-bottom:1.5rem;
+  background-color:#333;
+  width:100%;
+  text-align:center;
+  cursor:pointer;
+  border-radius:5px;
+}
+.radio{
+  display:block;
+}
+
+input[type="radio"]{
+  display: none;
+}
+label.radio{
+  cursor: pointer;
+  display: block;
+}
+label.radio input{
+  position: absolute;
+  top: 0; 
+  left: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+label.radio span {
+  display: block;
+  padding:10px 0px;
+  border-radius:5px;
+}
+label.radio input:checked + span {
+  background-color:#555 ;
+}
+label.radio span.active {
+  background-color:#555 ;
+}
+
+
+/* BUTTOM */
+.pagenations{
+  margin-top:1rem;
+  display:flex;
+  justify-content:space-between;
+}
+.btn{
+  padding:10px 20px;
+  background-color:#FF8400;
+  border:none;
+  border-radius:5px;
+  display:flex;
+  align-items:center;
+  cursor:pointer;
+}
+.btn:hover{
+  background-color:#d16c00;
+}
+
+
+@media(max-width:800px){
+  .trivia-container{
+    background-color:#222;
+    padding: 2rem 4rem;
+    top:0%;
+    left:0%;
+    transform: translate(0%, 0%);
+    position:relative;
+    width:100%;
+    border-radius:0px;
+    margin-top:5rem;
+  }
+  .top{
+    flex-direction:column-reverse;
+  }
+  .category-title{
+    font-size:1.2rem;
+    margin-top:.5rem;
+  }
+  .question{
+    font-size:.8rem;
+  }
+}
+
+@media(max-width:320px){
+  .pagenations{
+    flex-direction:column;
+  }
+  .btn{
+    margin-bottom:1rem;
+  }
+}
