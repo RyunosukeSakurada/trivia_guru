@@ -7,14 +7,75 @@
   <title>Trivia Guru</title>
   <!-- css -->
   <link rel="stylesheet" href="../../style/common.css">
+  <link rel="stylesheet" href="./Trivia.css">
   <!-- box icon -->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <!-- font family -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sigmar&display=swap" rel="stylesheet">
+  <!-- jQuery -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+    integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-  index.html
+  <header>
+    <a class="logo" href="../top/Top.html">Trivia Guru</a>
+  </header>
+  <section class="trivia-container">
+    <div class="top">
+      <h4 id="category-title" class="category-title"><!-- quiz genre --></h4>
+      <span id="remaining-question" class="remaining-question"><!-- the amount of questions and remaining questions --></span>
+    </div>
+    <div class="quiz">
+      <h4 id="question" class="question"><!-- question --></h4>
+      <div class="ans">
+        <label class="radio">
+          <input type="radio" name="answer" value=""/>
+          <span id="answer1"><!-- answer1 --></span>
+        </label>
+      </div>
+      <div class="ans">
+        <label class="radio">
+          <input type="radio" name="answer" value=""/>
+          <span id="answer2"><!-- answer2 --></span>
+        </label>
+      </div>
+      <div class="ans">
+        <label class="radio">
+          <input type="radio" name="answer" value=""/>
+          <span id="answer3"><!-- answer3 --></span>
+        </label>
+      </div>
+      <div class="ans">
+        <label class="radio">
+          <input type="radio" name="answer" value=""/>
+          <span id="answer4"><!-- answer4 --></span>
+        </label>
+      </div>
+    </div>
+    <div class="pagenations">
+      <button
+        id="previous-btn"
+        class="btn"
+        type="button">
+        <i class='bx bx-left-arrow-alt'></i>&nbsp;Previous
+      </button>
+      <button
+        id="next-btn"
+        class="btn"
+        type="button">
+        Next&nbsp;<i class='bx bx-right-arrow-alt'></i>
+      </button>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="../../js/Trivia.js"></script>
 </body>
 </html>

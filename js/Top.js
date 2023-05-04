@@ -6,7 +6,7 @@ form.addEventListener('submit', (e) => {
     localStorage.setItem('selectedOption1', selectedOption1);
     localStorage.setItem('selectedOption2',selectedOption2);
 
-    window.location.href = 'index.html';
+    window.location.href = '../trivia/Trivia.html';
   })
 
   const startEl = document.querySelector('.start_btn')
@@ -28,7 +28,7 @@ form.addEventListener('submit', (e) => {
       localStorage.setItem('id',genreEl.value);
       localStorage.setItem('amount',amountEl.value);
 
-      window.location.href = "index.html";
+      window.location.href = "../trivia/Trivia.html";
     }
   })
 

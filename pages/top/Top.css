@@ -17,7 +17,9 @@ body{
   color:#FF8400;
   margin-bottom:.5rem;
 }
-
+form{
+  text-align:center;
+}
 
 /* SELECT FORM */
 select{
@@ -89,4 +91,15 @@ a:hover{
   width: 50%;
   min-height: 100vh;
   min-width: 50vw;
+}
+
+@media(max-width:680px){
+  form{
+    margin:0 auto;
+  }
+}
+@media(max-width:480px){
+  .logo{
+    font-size:.8rem;
+  }
 }
