@@ -78,6 +78,7 @@ function showCongratsText(score) {
 }
 
 
+//GSAP
 const tl = gsap.timeline({
   defaults: {
     alpha: 0,

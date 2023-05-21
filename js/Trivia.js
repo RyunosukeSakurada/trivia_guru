@@ -1,8 +1,10 @@
 let score = 0
 const answerData = []
 
+//Automatically call the showData() function after the page is loaded.
 window.addEventListener('DOMContentLoaded', showData)
 
+//Fetch API 
 async function fetchQuizData(id, amount) {
   const options = {
     method: 'GET',
@@ -19,11 +21,37 @@ async function fetchQuizData(id, amount) {
     })
 }
 
+function getQuestions(trivia) {
+  //Used later to store the question and answer choices.
+  let questions = []
+  let answers = []
+  //Get information for each question. Iterate through all keys of the object trivia in order.
+  for (const key in trivia) {
+    //Check whether an object has a key.
+    if (Object.hasOwnProperty.call(trivia, key)) {
+      //Get the value corresponding to the key from the trivia object, and store it in a variable named element.
+      const element = trivia[key]
+      questions.push(element.question) //Adds the question of the current trivia element to the questions array.
+      answers.push(element.correct_answer) //Adds the correct answer of the current trivia element to the answers array.
+      let all_answers = element.incorrect_answers //Access the incorrect_answers property of the retrieved element.
+      all_answers.push(element.correct_answer) 
+      answers.push(all_answers) 
+    }
+  }
+
+  return [questions, answers]
+}
+
 
 async function showData(e) {
+  //Get the name of the genre stored in the localStorage.
   const category = localStorage.getItem('genre')
+  //Get the id of the genre stored in the localStorage.
   const id = localStorage.getItem('id')
+  //Get the amount of the question stored in the localStorage.
   const amount = localStorage.getItem('amount')
+
+  //Pass the id & amount to fetchQuizData() = trivia
   let trivia = await fetchQuizData(id, amount)
   let [questions, answers] = getQuestions(trivia)
 
@@ -31,22 +59,6 @@ async function showData(e) {
 }
 
 
-function getQuestions(trivia) {
-  let questions = []
-  let answers = []
-  for (const key in trivia) {
-    if (Object.hasOwnProperty.call(trivia, key)) {
-      const element = trivia[key]
-      questions.push(element.question)
-      answers.push(element.correct_answer)
-      let all_answers = element.incorrect_answers
-      all_answers.push(element.correct_answer)
-      answers.push(all_answers)
-    }
-  }
-
-  return [questions, answers]
-}
 
 
 function showQuestions(questions, answers, id, category, amount) {
@@ -61,6 +73,7 @@ function showQuestions(questions, answers, id, category, amount) {
   next_btn = document.getElementById('next-btn')
   prev_btn = document.getElementById('previous-btn')
 
+  //Event that is executed when the next_btn is clicked.
   next_btn.addEventListener('click', function () {
     let hasAnswered = checkAnswer(answers[2 * actual_question], isCorrect)
     if (hasAnswered && score <= Number(amount)) {
@@ -73,6 +86,8 @@ function showQuestions(questions, answers, id, category, amount) {
       console.log('Answer!')
     }
   })
+  
+  //Event that is executed when the prev_btn is clicked.
   prev_btn.addEventListener('click', function () {
     actual_question > 0 ? (actual_question -= 1) : (actual_question = 0)
     updateData(questions, answers, actual_question)
